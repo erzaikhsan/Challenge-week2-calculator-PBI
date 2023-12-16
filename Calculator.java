@@ -4,6 +4,7 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Selamat datang di Kalkulator Java");
         System.out.print("Masukkan angka pertama: ");
         double angka1 = scanner.nextDouble();
 
@@ -26,10 +27,15 @@ public class Calculator {
                 hasil = angka1 * angka2;
                 break;
             case '/':
-                hasil = angka1 / angka2;
+                if (angka2 != 0) {
+                    hasil = angka1 / angka2;
+                } else {
+                    System.out.println("Pembagian dengan nol tidak diizinkan.");
+                    return;
+                }
                 break;
             default:
-                System.out.println("Operasi tidak ada.");
+                System.out.println("Operasi tidak valid.");
                 return;
         }
 
